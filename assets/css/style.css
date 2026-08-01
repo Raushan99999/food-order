@@ -1,1 +1,111 @@
+/* Custom Variable Palette */
+:root {
+  --primary-color: #ff6b6b;
+  --primary-hover: #ee5253;
+  --dark-bg: #1e272e;
+  --card-shadow: 0 8px 24px rgba(0, 0, 0, 0.08);
+  --transition-fast: 0.25s ease-in-out;
+}
 
+body {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background-color: #f8f9fa;
+  color: #2d3436;
+}
+
+/* Custom Navigation Styling */
+.navbar-brand {
+  font-weight: 800;
+  letter-spacing: 0.5px;
+}
+
+/* Hero Section */
+.hero-banner {
+  background: linear-gradient(135deg, rgba(0, 0, 0, 0.75), rgba(0, 0, 0, 0.45)), 
+              url('https://images.unsplash.com/photo-1504674900247-0877df9cc836?auto=format&fit=crop&w=1200&q=80');
+  background-size: cover;
+  background-position: center;
+  color: #ffffff;
+  padding: 90px 20px;
+  border-radius: 16px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
+}
+
+/* Food Cards & Hover Effects */
+.food-card {
+  border: none;
+  border-radius: 12px;
+  overflow: hidden;
+  transition: transform var(--transition-fast), box-shadow var(--transition-fast);
+  box-shadow: var(--card-shadow);
+}
+
+.food-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 14px 28px rgba(0, 0, 0, 0.15);
+}
+
+.food-card img {
+  height: 210px;
+  object-fit: cover;
+  transition: transform 0.4s ease;
+}
+
+.food-card:hover img {
+  transform: scale(1.04);
+}
+
+/* Custom Buttons */
+.btn-primary {
+  background-color: var(--primary-color);
+  border-color: var(--primary-color);
+}
+
+.btn-primary:hover {
+  background-color: var(--primary-hover);
+  border-color: var(--primary-hover);
+}
+
+/* Shopping Cart Badge Pulse */
+@keyframes pulse {
+  0% { transform: scale(1); }
+  50% { transform: scale(1.25); }
+  100% { transform: scale(1); }
+}
+
+.badge-pulse {
+  animation: pulse 0.35s ease-in-out;
+}
+
+/* Floating Toast Notifications */
+.toast-container {
+  position: fixed;
+  bottom: 24px;
+  right: 24px;
+  z-index: 1080;
+}
+
+.custom-toast {
+  background-color: #2e7d32;
+  color: white;
+  border-radius: 8px;
+  padding: 12px 20px;
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.2);
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  opacity: 0;
+  transform: translateY(20px);
+  transition: opacity 0.3s ease, transform 0.3s ease;
+}
+
+.custom-toast.show {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Order Status Badges */
+.status-badge-Pending { background-color: #ff9f43; }
+.status-badge-Preparing { background-color: #0abde3; }
+.status-badge-Delivery { background-color: #ee5253; }
+.status-badge-Delivered { background-color: #10ac84; }
